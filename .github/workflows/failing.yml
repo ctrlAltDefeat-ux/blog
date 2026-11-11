@@ -1,0 +1,16 @@
+name: WordPress.com validation test
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  validation-test:
+    if: ${{ false }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Validation fixture" > fixture.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: wrong-name
+          path: fixture.txt
